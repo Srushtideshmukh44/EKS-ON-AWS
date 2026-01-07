@@ -61,25 +61,25 @@ Verify cluster creation:
 eksctl get cluster --region ap-south-1
 
 ### Step 3: Configure kubectl
-- Update kubeconfig
-- Verify worker nodes using kubectl get nodes  
-  [Update kubeconfig and verify worker nodes]
+ Update kubeconfig
+ Verify worker nodes using kubectl get nodes
+  Update kubeconfig and verify worker nodes
 aws eks update-kubeconfig --region ap-south-1 --name my-eks-cluster
 kubectl get nodes
 
 ### Step 4: Create Application Files 
-- Create a simple HTML file
-- Create Dockerfile for NGINX-based container
-[ Create application directory and required files.]
+ Create a simple HTML file
+ Create Dockerfile for NGINX-based container
+ Create application directory and required files.
   mkdir eks-app
   cd eks-app
-  [Create files:]
+Create files:
   index.html
   Dockerfile
 ### Step 5: Build Docker Image
-  - Build Docker image locally
- - Verify image creation
-[Build Docker image locally and verify.]
+   Build Docker image locally
+  Verify image creation
+Build Docker image locally and verify.
 docker build -t eks-app .
 docker images
 
