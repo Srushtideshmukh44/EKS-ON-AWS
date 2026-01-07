@@ -40,7 +40,7 @@ The application is deployed with high availability using multiple pods and expos
 ### Step 1: Configure AWS CLI
 - Configure AWS CLI using IAM user credentials
 - Set default region
-  Configure AWS CLI using IAM user credentials and set default region.
+ - Configure AWS CLI using IAM user credentials and set default region.
 aws configure
 aws configure get region
 aws sts get-caller-identity
@@ -48,7 +48,7 @@ aws sts get-caller-identity
 Create EKS cluster using eksctl
 - Use existing VPC and public subnets
 - Verify cluster creation
-Create an Amazon EKS cluster using eksctl with existing public subnets.
+- Create an Amazon EKS cluster using eksctl with existing public subnets.
 eksctl create cluster \
 --name my-eks-cluster \
 --region ap-south-1 \
@@ -57,7 +57,7 @@ eksctl create cluster \
 --node-type t3.medium \
 --nodes 2
 
-Verify cluster creation:
+- Verify cluster creation:
 eksctl get cluster --region ap-south-1
 
 ### Step 3: Configure kubectl
@@ -68,18 +68,18 @@ aws eks update-kubeconfig --region ap-south-1 --name my-eks-cluster
 kubectl get nodes
 
 ### Step 4: Create Application Files 
- Create a simple HTML file
- Create Dockerfile for NGINX-based container
- Create application directory and required files.
+- Create a simple HTML file
+- Create Dockerfile for NGINX-based container
+- Create application directory and required files.
   mkdir eks-app
   cd eks-app
-Create files:
+- Create files:
   index.html
   Dockerfile
 ### Step 5: Build Docker Image
    Build Docker image locally
-  Verify image creation
-Build Docker image locally and verify.
+   Verify image creation
+- Build Docker image locally and verify.
 docker build -t eks-app .
 docker images
 
