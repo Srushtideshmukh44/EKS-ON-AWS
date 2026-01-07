@@ -87,8 +87,8 @@ docker images
 - Create ECR repository
 - Authenticate Docker with ECR
 - Tag and push Docker image to ECR
-- 
-Create ECR repository and authenticate Docker:
+  
+- Create ECR repository and authenticate Docker:
 aws ecr create-repository --repository-name eks-app --region ap-south-1
 aws ecr get-login-password --region ap-south-1 | \
 docker login --username AWS --password-stdin <account-id>.dkr.ecr.ap-south-1.amazonaws.com
@@ -96,8 +96,8 @@ docker login --username AWS --password-stdin <account-id>.dkr.ecr.ap-south-1.ama
 
 Tag and push image:
 
-docker tag eks-app:latest <account-id>.dkr.ecr.ap-south-1.amazonaws.com/eks-app:latest
-docker push <account-id>.dkr.ecr.ap-south-1.amazonaws.com/eks-app:latest
+- docker tag eks-app:latest <account-id>.dkr.ecr.ap-south-1.amazonaws.com/eks-app:latest
+- docker push <account-id>.dkr.ecr.ap-south-1.amazonaws.com/eks-app:latest
 
 ### Step 7: Deploy Application on EKS 
 - Create Kubernetes Deployment YAML
@@ -139,9 +139,9 @@ Application accessible via public AWS LoadBalancer
 
 Delete Kubernetes resources and EKS cluster to avoid AWS billing.
 
--kubectl delete svc eks-app-service
--kubectl delete deployment eks-app
--eksctl delete cluster --name my-eks-cluster --region ap-south-1
+- kubectl delete svc eks-app-service
+- kubectl delete deployment eks-app
+- eksctl delete cluster --name my-eks-cluster --region ap-south-1
 
 ### 📌 Conclusion
 This project demonstrates a complete end-to-end deployment of a containerized application on Amazon EKS, covering Docker image creation, Amazon ECR integration, Kubernetes deployment, and LoadBalancer-based application exposure.
