@@ -104,7 +104,7 @@ docker push <account-id>.dkr.ecr.ap-south-1.amazonaws.com/eks-app:latest
 - Apply deployment using kube
 - Verify running pods
 
-Create Kubernetes deployment and apply it:
+-Create Kubernetes deployment and apply it:
 kubectl apply -f deployment.yaml
 kubectl get pods 
 
@@ -113,7 +113,7 @@ kubectl get pods
 -  Apply service
 - Retrieve external LoadBalancer URL
 
-Create LoadBalancer service and retrieve external URL:
+-Create LoadBalancer service and retrieve external URL:
 kubectl apply -f service.yaml
 kubectl get svc eks-app-service
 
@@ -121,7 +121,7 @@ kubectl get svc eks-app-service
 -Access application using external LoadBalancer DNS 
 - Verify application response in browser
 
-Access application using the external LoadBalancer DNS.
+-Access application using the external LoadBalancer DNS.
 
 http://<external-loadbalancer-dns>
 
@@ -139,9 +139,9 @@ Application accessible via public AWS LoadBalancer
 
 Delete Kubernetes resources and EKS cluster to avoid AWS billing.
 
-kubectl delete svc eks-app-service
-kubectl delete deployment eks-app
-eksctl delete cluster --name my-eks-cluster --region ap-south-1
+-kubectl delete svc eks-app-service
+-kubectl delete deployment eks-app
+-eksctl delete cluster --name my-eks-cluster --region ap-south-1
 
 ### 📌 Conclusion
 This project demonstrates a complete end-to-end deployment of a containerized application on Amazon EKS, covering Docker image creation, Amazon ECR integration, Kubernetes deployment, and LoadBalancer-based application exposure.
