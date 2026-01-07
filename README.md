@@ -90,6 +90,7 @@ docker images
 - Tag and push Docker image to ECR
   
 - Create ECR repository and authenticate Docker:
+  
 aws ecr create-repository --repository-name eks-app --region ap-south-1
 
 aws ecr get-login-password --region ap-south-1 | \
