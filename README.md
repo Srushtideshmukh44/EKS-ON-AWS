@@ -61,10 +61,11 @@ eksctl create cluster \
 eksctl get cluster --region ap-south-1
 
 ### Step 3: Configure kubectl
- Update kubeconfig
- Verify worker nodes using kubectl get nodes
-  Update kubeconfig and verify worker nodes
+ - Update kubeconfig
+ - Verify worker nodes using kubectl get nodes
+ - Update kubeconfig and verify worker nodes
 aws eks update-kubeconfig --region ap-south-1 --name my-eks-cluster
+
 kubectl get nodes
 
 ### Step 4: Create Application Files 
@@ -90,7 +91,9 @@ docker images
   
 - Create ECR repository and authenticate Docker:
 aws ecr create-repository --repository-name eks-app --region ap-south-1
+
 aws ecr get-login-password --region ap-south-1 | \
+
 docker login --username AWS --password-stdin <account-id>.dkr.ecr.ap-south-1.amazonaws.com
 
 
